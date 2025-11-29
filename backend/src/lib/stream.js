@@ -19,4 +19,16 @@ return userData
     }
 };
 // todo: do it later
-export const generateStreamtoken = (userId)=>{};
+export const generateStreamtoken = (userId)=>{
+    try{
+      
+//ensure userId is a string
+  const userIdStr = userId.toString();
+  return streamClient.createToken(userIdStr);
+    }catch(error){
+
+        console.error("Error generating stream token",error)
+
+    }
+
+};
